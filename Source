@@ -197,7 +197,33 @@ game:GetService("ReplicatedStorage").Remotes.Modes.Transform:InvokeServer(unpack
 game:GetService("ReplicatedStorage").Remotes.Training.ChargeFinish5:FireServer()
 		end
 	})
-	local Tab = Window:MakeTab({
+    local Tab = Window:MakeTab({
+		Name = "Discord",
+		Icon = "rbxassetid://10058434487",
+		PremiumOnly = false
+	})
+    Tab:AddButton({
+		Name = "Join Discord",
+		Callback = function()
+            syn.request({
+                Url = "http://127.0.0.1:6463/rpc?v=1",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json",
+                    ["Origin"] = "https://discord.com"
+                },
+                Body = game:GetService("HttpService"):JSONEncode({
+                    cmd = "INVITE_BROWSER",
+                    args = {
+                        code = "huJUBjhq7e"
+                    },
+                    nonce = game:GetService("HttpService"):GenerateGUID(false)
+                }),
+            })   
+				end
+
+	})
+    local Tab = Window:MakeTab({
 		Name = "Premium",
 		Icon = "rbxassetid://10058434487",
 		PremiumOnly = true
@@ -403,6 +429,32 @@ Tab:AddButton({
 			game:GetService("ReplicatedStorage").Remotes.Training.ChargeFinish:FireServer()
 	end
 })
+local Tab = Window:MakeTab({
+    Name = "Discord",
+    Icon = "rbxassetid://10058434487",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name = "Join Discord",
+    Callback = function()
+        syn.request({
+            Url = "http://127.0.0.1:6463/rpc?v=1",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json",
+                ["Origin"] = "https://discord.com"
+            },
+            Body = game:GetService("HttpService"):JSONEncode({
+                cmd = "INVITE_BROWSER",
+                args = {
+                    code = "huJUBjhq7e"
+                },
+                nonce = game:GetService("HttpService"):GenerateGUID(false)
+            }),
+        })   
+            end
+
+})
 end
 if game.PlaceId == 9701414321 then
 	_G.soquinhorevenge = false;
@@ -512,6 +564,32 @@ local args = {
 
 game:GetService("ReplicatedStorage")._BindableEvents.Transform:InvokeServer(unpack(args))
 	end
+})
+local Tab = Window:MakeTab({
+    Name = "Discord",
+    Icon = "rbxassetid://10058434487",
+    PremiumOnly = false
+})
+Tab:AddButton({
+    Name = "Join Discord",
+    Callback = function()
+        syn.request({
+            Url = "http://127.0.0.1:6463/rpc?v=1",
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json",
+                ["Origin"] = "https://discord.com"
+            },
+            Body = game:GetService("HttpService"):JSONEncode({
+                cmd = "INVITE_BROWSER",
+                args = {
+                    code = "huJUBjhq7e"
+                },
+                nonce = game:GetService("HttpService"):GenerateGUID(false)
+            }),
+        })   
+            end
+
 })
 end
 local plr = game.Players.LocalPlayer
