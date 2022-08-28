@@ -179,7 +179,7 @@ game:GetService("ReplicatedStorage").Remotes.Modes.Transform:InvokeServer(unpack
 					["MaxEnergy"] = {
 						["Value"] = 100000
 					},
-					["Energy"] = game:GetService("Players").guywith4.Status.Energy,
+					["Energy"] = game:GetService("Players").LocalPlayer.Status.Energy,
 					["InUse"] = {
 					["Value"] = 0
 
