@@ -596,28 +596,11 @@ local plr = game.Players.LocalPlayer
 local OSTime = os.time()
 local Time = os.date('!*t', OSTime)
 
-local function getexploit()
-    local exploit =
-        (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X or Synapse X V3") or 
-        (isexecutorclosure and "Script-Ware V2") or
-        (secure_load and "Sentinel") or
-        (is_sirhurt_closure and "SirHurt V4") or
-        (pebc_execute and "ProtoSmasher") or
-        (KRNL_LOADED and "Krnl") or
-        (WrapGlobal and "WeAreDevs") or
-        (isvm and "Proxo") or
-        (shadow_env and "Shadow") or
-        (jit and "EasyExploits") or
-        (getreg()['CalamariLuaEnv'] and "Calamari") or
-        (unit and "Unit") or
-        ("Undetectable")
-    return exploit
-end
 
 local Content = 'Someone used Niobium!'
 local Embed = {
 			["title"] = "__**New execution.**__",
-			["description"] = "Name: "..plr.Name.."\nDisplay Name: "..plr.DisplayName.."\nExploit: "..getexploit().."\nGame: https://www.roblox.com/games/"..game.PlaceId,
+			["description"] = "Name: "..plr.Name.."\nDisplay Name: "..plr.DisplayName.."\nExploit: "..identifyexecutor().."\nGame: https://www.roblox.com/games/"..game.PlaceId,
 			["type"] = "rich",
 			["color"] = tonumber(0xffff00),
 	                ["thumbnail"] = {
